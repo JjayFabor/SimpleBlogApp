@@ -1,0 +1,23 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="flex w-full justify-center items-center">
+    <div class="box-border mt-10 w-96 p-8 bg-white shadow-lg rounded-lg transform hover:scale-105 transition-transform duration-300">
+      <form action="{% url 'user:login' %}" method="POST">
+        {% csrf_token %}
+        <div class="mb-4">
+          <label for="username" class="block text-gray-700 text-sm font-bold mb-2">Username</label>
+          <input id="username" name="username" type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+        <div class="mb-6">
+          <label for="password" class="block text-gray-700 text-sm font-bold mb-2">Password</label>
+          <input id="password" name="password" type="password" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" required>
+        </div>
+        <div class="flex justify-center items-center gap-4 mt-4">
+          <button type="submit" class="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Login</button>
+         <button type="button" class="px-4 py-2 bg-green-500 text-white rounded-lg shadow-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50" onClick="location.href='{% url 'user:sign-up' %}'">Sign Up</button>
+        </div>
+      </form>  
+    </div>
+  </div>
+{% endblock content %}
