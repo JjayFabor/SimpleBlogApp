@@ -1,6 +1,4 @@
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
-from django.contrib.auth.models import User
-from django.core.exceptions import ValidationError
 from django.forms.widgets import PasswordInput, TextInput
 from django.forms.fields import EmailField
 from django import forms
