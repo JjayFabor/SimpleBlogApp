@@ -4,11 +4,17 @@ from django.contrib.auth import logout, authenticate, login
 
 from .forms import *
 from django.contrib.auth.models import auth
+from posts.models import *
 
 
 @login_required
 def homeView(request):
-    return render(request, "home.html", {"show_navbar": False, "show_header": True})
+    allPosts = Post.objects.all()
+    return render(
+        request,
+        "home.html",
+        {"allPosts": allPosts, "show_navbar": False, "show_header": True},
+    )
 
 
 def loginView(request):
