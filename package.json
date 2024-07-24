@@ -1,6 +1,16 @@
 {
-  "devDependencies": {
+  "name": "blogapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "tailwindcss build static/css/tailwind.css -o static/css/main.css",
+    "watch:css": "tailwindcss -i ./static/css/tailwind.css -o ./static/css/main.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
     "tailwindcss": "^3.4.6"
   }
 }
-

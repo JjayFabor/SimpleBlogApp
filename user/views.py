@@ -8,7 +8,7 @@ from django.contrib.auth.models import auth
 
 @login_required
 def homeView(request):
-    return render(request, "home.html")
+    return render(request, "home.html", {"show_navbar": False, "show_header": True})
 
 
 def loginView(request):
@@ -23,7 +23,7 @@ def loginView(request):
             if user is not None:
                 auth.login(request, user)
                 return redirect("user:home")
-    return render(request, "login.html", {"form": form})
+    return render(request, "login.html", {"form": form, "show_navbar": True})
 
 
 def signupView(request):
@@ -34,7 +34,7 @@ def signupView(request):
             return redirect("user:login")
     else:
         form = SignUpForm()
-    return render(request, "signup.html", {"form": form})
+    return render(request, "signup.html", {"form": form, "show_navbar": True})
 
 
 def logoutView(request):
